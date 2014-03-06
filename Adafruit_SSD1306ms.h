@@ -30,7 +30,7 @@ All text above, and the splash screen must be included in any redistribution
   typedef uint8_t PortMask;
 #endif
 
-// #include <SPI.h>
+#include <SPI.h>
 #include <Adafruit_GFX.h>
 
 #define BLACK 0
@@ -120,8 +120,8 @@ All text above, and the splash screen must be included in any redistribution
 
 class Adafruit_SSD1306 : public Adafruit_GFX {
  public:
-  // Adafruit_SSD1306(int8_t SID, int8_t SCLK, int8_t DC, int8_t RST, int8_t CS);
-  // Adafruit_SSD1306(int8_t DC, int8_t RST, int8_t CS);
+  Adafruit_SSD1306(int8_t SID, int8_t SCLK, int8_t DC, int8_t RST, int8_t CS);
+  Adafruit_SSD1306(int8_t DC, int8_t RST, int8_t CS);
   Adafruit_SSD1306(int8_t RST);
 
   void begin(uint8_t switchvcc = SSD1306_SWITCHCAPVCC, uint8_t i2caddr = SSD1306_I2C_ADDRESS);
@@ -148,7 +148,7 @@ class Adafruit_SSD1306 : public Adafruit_GFX {
 
  private:
   int8_t _i2caddr, _vccstate, sid, sclk, dc, rst, cs;
-  // void fastSPIwrite(uint8_t c);
+  void fastSPIwrite(uint8_t c);
 
   boolean hwSPI;
   PortReg *mosiport, *clkport, *csport, *dcport;
