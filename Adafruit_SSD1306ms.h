@@ -16,6 +16,13 @@ BSD license, check license.txt for more information
 All text above, and the splash screen must be included in any redistribution
 *********************************************************************/
 
+/*********************************************************************
+Modified March 2014 by AKA to support RFDuino.
+
+Careful, software SPI might not work (but hardware SPI should)
+https://github.com/AKAMEDIASYSTEM/Adafruit_SSD1306_rfMOD
+*********************************************************************/
+
 #if ARDUINO >= 100
  #include "Arduino.h"
 #else
